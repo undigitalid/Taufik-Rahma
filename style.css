@@ -1,0 +1,377 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   1. CSS VARIABLES & COLOR PALETTE
+   Tema: Nature, Sage Green, Earthy Tones & Aesthetic High-End
+   ========================================================================== */
+:root {
+    --bg-main: #f5f6f4;         
+    --bg-dark: #3a473d;         
+    --accent-color: #6a7b6d;    
+    --accent-hover: #526154;    
+    --text-dark: #2c332e;       
+    --border-color: #d1d8d2;    
+    
+    --success-bg: #eaf5eb;      
+    --success-text: #2e7d32;    
+    --danger-bg: #fdeaea;       
+    --danger-text: #c62828;     
+    
+    --shadow-sm: 0 5px 15px rgba(58, 71, 61, 0.08);
+    --shadow-md: 0 12px 30px rgba(58, 71, 61, 0.12);
+    --shadow-lg: 0 20px 40px rgba(58, 71, 61, 0.25);
+    
+    --font-script: 'WindSong', cursive;           
+    --font-serif: 'Cormorant Garamond', serif;    
+    --font-sans: 'Montserrat', sans-serif;        
+    
+    --transition-smooth: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================================================
+   2. RESET & GLOBAL STYLES
+   ========================================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background-color: var(--bg-main); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; width: 100%; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--bg-dark); }
+
+/* ==========================================================================
+   3. TYPOGRAPHY & ALIGNMENT
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6, p, span, a, label { text-align: center; width: 100%; }
+h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color: var(--text-dark); font-weight: 600; }
+.title-couple, .name-script, .dan { font-family: var(--font-script); color: var(--bg-dark); font-weight: 500; }
+
+/* ==========================================================================
+   4. LAYOUT SYSTEM & PARALLAX
+   ========================================================================== */
+.parallax-bg {
+    position: relative; width: 100%; min-height: 100vh;
+    background-attachment: fixed; background-position: center; background-repeat: no-repeat;
+    background-size: cover; padding: 100px 20px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; overflow: hidden; z-index: 1;
+}
+.parallax-bg::before { content: ''; position: absolute; inset: 0; background: rgba(44, 51, 46, 0.35); z-index: -1; }
+.solid-bg { background-color: var(--bg-main); padding: 100px 20px; display: flex; justify-content: center; }
+
+/* ==========================================================================
+   5. SHAPE CARDS
+   ========================================================================== */
+.glass-container { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 60px 30px; max-width: 650px; box-shadow: var(--shadow-lg); z-index: 2; }
+#gift .glass-container { background: rgba(44, 51, 46, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); }
+.clean-box { width: 100%; max-width: 700px; display: flex; flex-direction: column; align-items: center; }
+
+/* ==========================================================================
+   6. COVER SECTION
+   ========================================================================== */
+#cover { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 9999; transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease; padding: 20px; }
+#cover.opened-dramatic { opacity: 0; filter: blur(20px); transform: translateY(-50px) scale(1.05); visibility: hidden; pointer-events: none; }
+.cover-glass-overlay { background: rgba(245, 246, 244, 0.8); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding: 60px 40px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.6); display: flex; flex-direction: column; justify-content: center; align-items: center; max-width: 450px; width: 100%; box-shadow: var(--shadow-lg); }
+.subtitle-cover { font-size: 1.1rem; letter-spacing: 6px; margin-bottom: -10px; font-weight: 600; text-transform: uppercase; color: var(--accent-color); }
+.title-couple { font-size: 5rem; margin-bottom: 15px; line-height: 1; text-shadow: 2px 2px 5px rgba(0,0,0,0.05); }
+.date-line { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 40px; width: 100%; }
+.date-line .line { height: 1px; width: 50px; background-color: var(--accent-color); }
+.date-cover { font-family: var(--font-serif); font-size: 1.4rem; letter-spacing: 4px; font-weight: 600; color: var(--bg-dark); }
+.guest-info { margin-bottom: 30px; }
+.guest-info p { font-size: 0.85rem; margin-bottom: 5px; color: var(--text-dark); }
+.guest-name { font-size: 1.5rem; color: var(--bg-dark); font-weight: bold; }
+.btn-primary, .submit-btn { background-color: var(--accent-color); color: #fff; border: none; padding: 14px 40px; border-radius: 30px; font-size: 0.95rem; cursor: pointer; margin-top: 15px; font-family: var(--font-sans); font-weight: 500; transition: var(--transition-smooth); text-transform: uppercase; letter-spacing: 2px; box-shadow: var(--shadow-md); display: inline-block; }
+.btn-primary:hover, .submit-btn:hover { background-color: var(--bg-dark); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.btn-unlocking { transform: scale(0) !important; opacity: 0; pointer-events: none; }
+
+/* ==========================================================================
+   7. WITH LOVE SECTION
+   ========================================================================== */
+.section-title { font-size: 3rem; letter-spacing: 2px; margin-bottom: 30px; color: var(--bg-dark); font-style: italic; }
+#with-love .section-title { color: #fff; text-shadow: 1px 1px 10px rgba(0,0,0,0.3); }
+.ayat { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; font-weight: 400; max-width: 550px; line-height: 1.9; color: #fff; text-shadow: 1px 1px 8px rgba(0,0,0,0.5); margin: 0 auto; }
+
+/* ==========================================================================
+   8. BRIDE & GROOM SECTION
+   ========================================================================== */
+.salam { font-size: 0.95rem; margin-bottom: 60px; line-height: 1.8; color: var(--accent-hover); }
+.couple-cards { display: flex; flex-direction: column; gap: 60px; width: 100%; align-items: center; }
+.person { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.aesthetic-frame { width: 240px; height: 340px; border-radius: 120px 120px 0 0; overflow: hidden; padding: 6px; background-color: #fff; margin-bottom: 25px; box-shadow: var(--shadow-md); position: relative; transition: var(--transition-smooth); }
+.aesthetic-frame:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.aesthetic-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 114px 114px 0 0; }
+.name-script { font-size: 4.5rem; margin-bottom: -5px; line-height: 1; }
+.full-name { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; letter-spacing: 1px; }
+.parents { font-size: 0.85rem; margin-bottom: 15px; color: var(--accent-hover); }
+.ig-link { color: var(--accent-color); text-decoration: none; font-size: 0.85rem; padding: 8px 20px; border: 1px solid var(--accent-color); border-radius: 30px; transition: var(--transition-smooth); display: inline-block; width: auto; font-weight: 500; }
+.ig-link:hover { background-color: var(--accent-color); color: #fff; }
+.dan { font-size: 4.5rem; margin: -20px 0; color: var(--accent-color); opacity: 0.7; }
+
+/* ==========================================================================
+   9. EVENTS SECTION
+   ========================================================================== */
+.event-wrapper { width: 100%; max-width: 900px; }
+.event-cards-container { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+.event-detail-card { background-color: rgba(255, 255, 255, 0.95); border: none; border-radius: 20px; padding: 50px 30px; max-width: 400px; width: 100%; display: flex; flex-direction: column; align-items: center; box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+.event-detail-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--accent-color); }
+.event-heading { font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--bg-dark); }
+.event-day { font-size: 1rem; letter-spacing: 4px; color: var(--accent-color); font-weight: 500; }
+.event-date-number { font-size: 5rem; line-height: 1; margin: 10px 0; color: var(--bg-dark); font-family: var(--font-serif); }
+.event-month { font-family: var(--font-serif); font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 20px; font-weight: 600; }
+.event-time { font-size: 0.95rem; font-weight: 600; margin-bottom: 25px; background: var(--bg-main); color: var(--bg-dark); padding: 8px 25px; border-radius: 30px; display: inline-block; width: auto; border: 1px solid var(--border-color); }
+.divider-leaf { height: 30px; margin-bottom: 25px; display: flex; justify-content: center; align-items: center; }
+.divider-leaf::after { content: '🌿'; font-size: 1.5rem; opacity: 0.8; }
+.event-location { font-family: var(--font-serif); font-weight: 600; font-size: 1.4rem; margin-bottom: 8px; color: var(--bg-dark); }
+.event-address { font-size: 0.9rem; margin-bottom: 30px; line-height: 1.6; color: var(--accent-hover); }
+
+/* ==========================================================================
+   10. GALLERY (JEMURAN KENANGAN / HANGING PHOTOS)
+   ========================================================================== */
+.clothesline-scroll {
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 30px 0 60px 0;
+    position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.clothesline-scroll::-webkit-scrollbar { display: none; }
+
+/* Menghilangkan rope-line dari HTML karena kita pakai CSS Pseudo Element */
+.rope-line { display: none; }
+
+.hanging-container {
+    display: inline-flex;
+    gap: 30px;
+    padding: 20px calc(50vw - 120px);
+    position: relative;
+    min-width: max-content; /* Kunci agar background/tali tidak terputus */
+    align-items: flex-start;
+}
+
+/* PERBAIKAN: Tali lurus ditarik otomatis sepanjang container */
+.hanging-container::before {
+    content: '';
+    position: absolute;
+    top: 25px; /* Menyesuaikan posisi di atas jepitan */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #bbaea0; /* Warna tali rami */
+    z-index: 0;
+}
+
+.hanging-photo {
+    position: relative;
+    width: 220px;
+    flex: 0 0 auto;
+    transform-origin: top center;
+    animation: swing 4s ease-in-out infinite alternate;
+    animation-delay: var(--swing-delay);
+    z-index: 1;
+}
+
+@keyframes swing {
+    0% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+.hanging-photo:hover { animation-play-state: paused; z-index: 10; }
+
+.wooden-clip {
+    position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 12px; height: 30px;
+    background-color: #8b6b4e; border-radius: 2px; box-shadow: 1px 2px 4px rgba(0,0,0,0.3); z-index: 3;
+}
+.wooden-clip::after { content: ''; position: absolute; top: 12px; left: 1px; right: 1px; height: 2px; background: rgba(0,0,0,0.3); }
+
+.photo-paper { background: #fff; padding: 10px 10px 20px 10px; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: transform 0.4s ease, box-shadow 0.4s ease; cursor: pointer; }
+.hanging-photo:hover .photo-paper { transform: scale(1.15) translateY(10px); box-shadow: 0 20px 40px rgba(58, 71, 61, 0.3); }
+.photo-paper img { width: 100%; height: 220px; object-fit: cover; border: 1px solid rgba(0,0,0,0.05); filter: sepia(20%) contrast(1.05); transition: filter 0.4s ease; }
+.hanging-photo:hover .photo-paper img { filter: sepia(0%) contrast(1.1); }
+.photo-caption { font-family: var(--font-script); font-size: 1.8rem; color: var(--text-dark); margin-top: 15px; line-height: 1; }
+
+/* ==========================================================================
+   10B. VINTAGE CINEMA TICKET
+   ========================================================================== */
+.vintage-ticket {
+    display: flex; flex-direction: row; background: #fbf8f1; border-radius: 8px;
+    max-width: 600px; margin: 0 auto; box-shadow: var(--shadow-md); position: relative;
+    transform: rotate(-2deg); transition: var(--transition-smooth); cursor: default;
+}
+.vintage-ticket:hover { transform: rotate(0) scale(1.05); box-shadow: var(--shadow-lg); }
+
+.ticket-left { flex: 3; padding: 25px; display: flex; flex-direction: column; justify-content: center; border-right: 2px dashed #ccc; }
+
+/* PERBAIKAN: ticket-right dikasih overflow tersembunyi */
+.ticket-right { 
+    flex: 1; background: #f0ebe1; padding: 25px 15px; display: flex; flex-direction: column; 
+    align-items: center; justify-content: center; border-radius: 0 8px 8px 0; overflow: hidden; 
+}
+
+.ticket-rip { position: absolute; left: 75%; top: 0; bottom: 0; width: 0; }
+.vintage-ticket::before, .vintage-ticket::after {
+    content: ''; position: absolute; left: calc(75% - 12px); width: 24px; height: 24px;
+    background-color: var(--bg-main); border-radius: 50%; box-shadow: inset 0 3px 5px rgba(0,0,0,0.05);
+}
+.vintage-ticket::before { top: -12px; }
+.vintage-ticket::after { bottom: -12px; }
+
+.ticket-type { font-family: 'Courier New', Courier, monospace; letter-spacing: 3px; font-size: 0.75rem; color: #888; font-weight: bold; margin-bottom: 5px; text-align: left;}
+.movie-title { font-family: var(--font-serif); font-size: 2.2rem; color: var(--bg-dark); line-height: 1.1; margin-bottom: 10px; text-align: left; }
+.ticket-cast { font-family: 'Courier New', Courier, monospace; font-size: 0.85rem; color: #555; text-align: left; margin-bottom: 25px; line-height: 1.5; font-weight: bold;}
+.ticket-info-row { display: flex; gap: 25px; justify-content: flex-start; }
+.info-block { display: flex; flex-direction: column; text-align: left; }
+.info-block .label { font-family: 'Courier New', Courier, monospace; font-size: 0.65rem; color: #999; text-align: left; }
+.info-block .value { font-family: 'Courier New', Courier, monospace; font-size: 1.1rem; font-weight: bold; color: var(--bg-dark); text-align: left; }
+.admit-text { font-family: var(--font-serif); font-size: 1.1rem; font-weight: bold; color: var(--bg-dark); letter-spacing: 2px; line-height: 1.2; margin-bottom: 15px; text-align: center; }
+
+/* PERBAIKAN: Barcode rapi pakai CSS Background, bebas teks tumpah */
+.barcode { 
+    color: transparent; /* Sembunyikan teks HTML-nya */
+    width: 100%; 
+    height: 40px; 
+    background-image: repeating-linear-gradient(
+        to right,
+        var(--bg-dark) 0, var(--bg-dark) 3px,
+        transparent 3px, transparent 6px,
+        var(--bg-dark) 6px, var(--bg-dark) 8px,
+        transparent 8px, transparent 12px,
+        var(--bg-dark) 12px, var(--bg-dark) 15px,
+        transparent 15px, transparent 18px
+    );
+    margin: 15px 0; 
+    display: block; 
+}
+.ticket-number { font-family: 'Courier New', Courier, monospace; font-size: 0.75rem; color: #666; font-weight: bold; text-align: center; }
+
+/* ==========================================================================
+   11. WEDDING GIFT (ACCORDION)
+   ========================================================================== */
+.gift-hidden { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease; width: 100%; }
+.gift-show { max-height: 2500px; opacity: 1; margin-top: 35px; }
+.gift-container { display: grid; grid-template-columns: 1fr; gap: 20px; width: 100%; }
+.gift-card { background: #fff; border: 1px solid var(--border-color); border-radius: 20px; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; box-shadow: var(--shadow-sm); transition: var(--transition-smooth); }
+.gift-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent-color); }
+.bank-logo { height: 35px; width: auto; margin-bottom: 15px; object-fit: contain; }
+.bank-name { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 10px; color: var(--bg-dark); font-weight: 600; }
+.rek-number { font-size: 1.5rem; font-weight: 600; margin: 5px 0; letter-spacing: 2px; color: var(--bg-dark); }
+.rek-name { font-size: 0.95rem; font-weight: 500; color: var(--accent-hover); }
+.btn-copy { background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); padding: 8px 25px; border-radius: 30px; cursor: pointer; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; transition: var(--transition-smooth); margin-top: 15px; width: auto; }
+.btn-copy:hover { background: var(--accent-color); color: #fff; }
+
+/* ==========================================================================
+   12. RSVP & WISHES
+   ========================================================================== */
+#rsvpForm { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 40px; }
+input, textarea { width: 100%; padding: 16px; border: 1px solid var(--border-color); border-radius: 12px; font-family: var(--font-sans); background: #fff; color: var(--text-dark); font-size: 0.95rem; text-align: center; transition: var(--transition-smooth); }
+textarea { resize: vertical; min-height: 120px; }
+input:focus, textarea:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(106, 123, 109, 0.2); }
+.custom-select { position: relative; width: 100%; }
+.select-selected { width: 100%; padding: 16px; border: 1px solid var(--border-color); border-radius: 12px; font-family: var(--font-sans); background: #fff; color: var(--text-dark); font-size: 0.95rem; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: var(--transition-smooth); user-select: none; }
+.select-selected span { flex-grow: 1; text-align: center; }
+.select-selected::after { content: "▼"; position: absolute; right: 20px; font-size: 0.7rem; color: var(--accent-color); transition: 0.3s ease; }
+.select-selected.select-arrow-active::after { transform: rotate(180deg); }
+.select-selected:hover { border-color: var(--accent-color); }
+.select-items { position: absolute; background-color: #fff; top: calc(100% + 5px); left: 0; right: 0; z-index: 99; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: var(--shadow-md); overflow: hidden; transition: all 0.3s ease; }
+.select-hide { opacity: 0; visibility: hidden; transform: translateY(-10px); pointer-events: none; }
+.select-items div { padding: 15px; cursor: pointer; font-size: 0.95rem; text-align: center; border-bottom: 1px solid var(--border-color); transition: var(--transition-smooth); }
+.select-items div:last-child { border-bottom: none; }
+.select-items div:hover { background-color: var(--accent-color); color: #fff; }
+.wishes-wrapper { width: 100%; border-top: 1px dashed var(--border-color); padding-top: 40px; margin-top: 20px; }
+.wishes-title { font-size: 2rem; margin-bottom: 25px; font-family: var(--font-serif); color: var(--bg-dark); }
+#wishes-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; width: 100%; }
+.wish-item { background: #fff; border: 1px solid var(--border-color); padding: 25px; border-radius: 16px; box-shadow: var(--shadow-sm); transition: var(--transition-smooth); }
+.wish-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--accent-color); }
+.wish-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 12px; }
+.wish-name { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; text-align: left; color: var(--bg-dark); }
+.badge { font-size: 0.7rem; padding: 6px 12px; border-radius: 20px; font-weight: 600; display: inline-flex; align-items: center; text-transform: uppercase; letter-spacing: 1px; }
+.badge-hadir { background-color: var(--success-bg); color: var(--success-text); }
+.badge-absen { background-color: var(--danger-bg); color: var(--danger-text); }
+.wish-text { font-size: 0.95rem; text-align: left; color: var(--text-dark); line-height: 1.7; }
+#custom-toast { width: 100%; background-color: var(--success-bg); padding: 15px 20px; border-radius: 12px; display: none; align-items: center; margin-bottom: 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--success-text); }
+#custom-toast.show { display: flex; animation: fadeInDownToast 0.4s ease forwards; }
+#custom-toast.error { background-color: var(--danger-bg); border-color: var(--danger-text); }
+#custom-toast.error .toast-message { color: var(--danger-text); }
+.toast-content { display: flex; align-items: center; gap: 12px; width: 100%; }
+.toast-message { font-size: 0.9rem; color: var(--success-text); font-weight: 600; text-align: left; margin: 0; }
+@keyframes fadeInDownToast { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ==========================================================================
+   13. LIGHTBOX & MUSIC BUTTON
+   ========================================================================== */
+.zoomable { cursor: zoom-in; }
+#lightbox { position: fixed; inset: 0; background: rgba(20, 24, 21, 0.95); z-index: 10000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+#lightbox.active { opacity: 1; pointer-events: auto; }
+#lightbox img { max-width: 95%; max-height: 85vh; border-radius: 12px; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+.close-lightbox { position: absolute; top: 20px; right: 25px; color: #fff; font-size: 40px; cursor: pointer; transition: var(--transition-smooth); }
+.close-lightbox:hover { color: var(--accent-color); transform: rotate(90deg); }
+#music-control { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; background-color: var(--accent-color); color: white; border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; z-index: 1000; display: none; box-shadow: var(--shadow-md); transition: var(--transition-smooth); }
+#music-control:hover { transform: scale(1.1); background-color: var(--bg-dark); }
+#music-control.paused { background-color: var(--border-color); color: var(--bg-dark); opacity: 0.8; }
+.playing { animation: spinMusic 4s linear infinite; }
+@keyframes spinMusic { 100% { transform: rotate(360deg); } }
+
+/* ==========================================================================
+   14. FOOTER
+   ========================================================================== */
+footer { padding: 80px 20px 50px 20px; background: var(--bg-dark); color: #fff; display: flex; flex-direction: column; align-items: center; overflow: hidden; }
+footer .title-couple { color: #fff; font-size: 3.5rem; margin-bottom: 10px; }
+footer p { font-size: 0.95rem; opacity: 0.8; margin-top: 10px; letter-spacing: 4px; text-transform: uppercase; font-weight: 500;}
+
+/* ==========================================================================
+   15. ANIMATION ENGINE
+   ========================================================================== */
+.animate-slide-up { opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.animate-fade-in { opacity: 0; transition: opacity 1.5s ease-in-out; }
+.animate-fade-left { opacity: 0; transform: translateX(-50px); transition: opacity 1s ease, transform 1s ease; }
+.animate-fade-right { opacity: 0; transform: translateX(50px); transition: opacity 1s ease, transform 1s ease; }
+.animate-zoom { opacity: 0; transform: scale(0.9); transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.is-visible { opacity: 1 !important; transform: translate(0, 0) scale(1) !important; }
+
+/* ==========================================================================
+   16. MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 767px) {
+    .vintage-ticket { flex-direction: row; }
+    .ticket-left { padding: 20px 15px; }
+    .ticket-right { padding: 20px 10px; }
+    .movie-title { font-size: 1.5rem; }
+    .info-block .value { font-size: 0.9rem; }
+    .barcode { font-size: 1.2rem; margin: 15px 0; }
+    .ticket-cast { margin-bottom: 15px; font-size: 0.75rem; }
+}
+
+@media (min-width: 768px) {
+    .parallax-bg, .solid-bg { padding: 120px 20px; }
+    .cover-glass-overlay { max-width: 550px; padding: 80px 50px; }
+    
+    .couple-cards { flex-direction: row; justify-content: space-evenly; gap: 30px; }
+    .person { width: 45%; }
+    .aesthetic-frame { width: 280px; height: 400px; border-radius: 140px 140px 0 0; }
+    
+    .event-cards-container { flex-direction: row; justify-content: center; align-items: stretch; }
+    .event-detail-card { width: calc(50% - 20px); max-width: 450px; margin-bottom: 0; }
+    
+    .gift-container { grid-template-columns: repeat(2, 1fr); }
+    .address-card { grid-column: span 1; }
+    
+    #rsvpForm, .wishes-wrapper { max-width: 650px; }
+    .wish-header { flex-direction: row; align-items: center; }
+
+    /* Layout Jemuran untuk Desktop */
+    .hanging-container { gap: 40px; padding: 30px calc(50vw - 180px); }
+    .hanging-photo { width: 300px; }
+    .photo-paper img { height: 320px; }
+    .photo-caption { font-size: 2.2rem; }
+    .hanging-container::before { top: 35px; }
+    
+    .vintage-ticket { padding-left: 20px; }
+}
+
+@media (min-width: 1024px) {
+    .title-couple { font-size: 6rem; }
+    .name-script { font-size: 5.5rem; }
+    .event-date-number { font-size: 6.5rem; }
+}
