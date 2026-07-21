@@ -154,7 +154,7 @@ window.closeLightbox = function() {
 };
 
 // ============================================================================
-// 4. CUSTOM SELECT DROPDOWN LOGIC
+// 4. CUSTOM SELECT DROPDOWN LOGIC (RSVP)
 // ============================================================================
 function initCustomSelect() {
     if (!DOM.customSelect.wrapper) return;
@@ -187,9 +187,10 @@ function initCustomSelect() {
 }
 
 // ============================================================================
-// 5. ANIMATION SYSTEMS
+// 5. ANIMATION SYSTEMS (SCROLL & COUNT)
 // ============================================================================
 function initScrollAnimations() {
+    // 1. Observer Standar
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -205,6 +206,18 @@ function initScrollAnimations() {
     targets.forEach(t => {
         if (!DOM.cover.contains(t) && t !== DOM.cover) observer.observe(t);
     });
+
+    // 2. Observer Cinematic Reveal (Muncul pas di-scroll)
+    const cinematicObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.25 }); // Threshold lebih besar (25%) biar nunggu di-scroll dulu
+
+    const cinematicTargets = document.querySelectorAll('.reveal-cinematic');
+    cinematicTargets.forEach(t => cinematicObserver.observe(t));
 }
 
 function initCountUpNumbers() {
