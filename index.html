@@ -14,10 +14,10 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
-    <!-- Font Premium Estetik (Tema Alam & Elegan) -->
+    <!-- Font Premium Estetik -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=WindSong:wght@400;500&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,7 +29,9 @@
         <img id="lightbox-img" src="" alt="Zoomed Foto">
     </div>
 
+    <!-- ========================================== -->
     <!-- COVER SECTION -->
+    <!-- ========================================== -->
     <div id="cover" class="parallax-bg animate-zoom" style="background-image: url('2.jpg');">
         <div class="cover-glass-overlay">
             <p class="subtitle-cover animate-slide-up">THE WEDDING OF</p>
@@ -56,18 +58,22 @@
     </audio>
     <button id="music-control" class="playing">🎵</button>
 
+    <!-- ========================================== -->
     <!-- WITH LOVE SECTION -->
+    <!-- ========================================== -->
     <section id="with-love" class="parallax-bg bg-nature" style="background-image: url('4.jpg');">
         <div class="glass-container animate-zoom">
             <h2 class="section-title">Kisah Kasih</h2>
             <p class="ayat">
                 "Dan diantara tanda-tanda kekuasaanNya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikanNya diantaramu rasa kasih dan sayang."<br><br>
-                <span style="font-size: 0.9em; font-style: normal;">(Qs. Ar. Rum : 21)</span>
+                <span style="font-size: 0.85em; font-style: normal;">(Qs. Ar. Rum : 21)</span>
             </p>
         </div>
     </section>
 
+    <!-- ========================================== -->
     <!-- BRIDE & GROOM SECTION -->
+    <!-- ========================================== -->
     <section id="bride-groom" class="solid-bg">
         <div class="content-box clean-box animate-zoom">
             <p class="salam animate-slide-up">Assalamualaikum Wr. Wb.<br>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami:</p>
@@ -100,10 +106,12 @@
         </div>
     </section>
 
+    <!-- ========================================== -->
     <!-- EVENTS SECTION -->
+    <!-- ========================================== -->
     <section id="events" class="parallax-bg bg-nature" style="background-image: url('7.jpg');">
         <div class="event-wrapper">
-            <h2 class="section-title animate-slide-up" style="color: #fff; margin-bottom: 40px;">Rangkaian Acara</h2>
+            <h2 class="section-title animate-slide-up" style="color: #fff; margin-bottom: 30px;">Rangkaian Acara</h2>
 
             <div class="event-cards-container">
                 <!-- AKAD -->
@@ -139,153 +147,158 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-   <!-- GALLERY SECTION (Versi Out of the Box: Jemuran Kenangan + Tiket Bioskop) -->
-    <section id="gallery" class="solid-bg" style="padding: 100px 0 120px 0; overflow: hidden; position: relative;">
-        <div class="content-box clean-box animate-zoom" style="max-width: 100%; border: none; background: transparent; box-shadow: none; padding: 0;">
-            <h2 class="section-title animate-slide-up" style="margin-bottom: 10px;">Jemuran Kenangan</h2>
-            <p class="salam animate-slide-up" style="margin-bottom: 30px;">Dibiarkan mengalun lembut bersama angin. <br>(Geser ke samping & sentuh fotonya!)</p>
+    <!-- ========================================== -->
+    <!-- GALLERY & STORYTELLING SECTION -->
+    <!-- ========================================== -->
+    <section id="gallery" class="solid-bg" style="padding: 80px 0 120px 0; overflow: hidden; position: relative;">
+        
+        <div class="scrollytelling-wrapper visual-theme">
             
-            <!-- Jemuran Foto (Hanging Photos) -->
-            <div class="clothesline-scroll animate-fade-in">
-                <!-- Tali Jemuran -->
-                <div class="rope-line"></div>
-                
-                <div class="hanging-container">
-                    <!-- Foto 1 -->
-                    <!-- Note: var(--swing-delay) biar ayunannya nggak barengan/kaku -->
-                    <div class="hanging-photo" style="--swing-delay: 0s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('1.jpg')">
-                            <img src="1.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Senyum SMA</div>
-                        </div>
+            <!-- JUDUL UTAMA CERITA -->
+            <div class="reveal-cinematic" style="text-align: center; margin-bottom: 50px; padding: 0 20px;">
+                <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--bg-dark); margin-bottom: 10px;">Kisah Perjalanan Kami</h2>
+                <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--accent-color); font-style: italic;">Gulir ke bawah perlahan untuk mengikuti cerita ini...</p>
+            </div>
+
+            <!-- Garis Waktu Penghubung Cerita -->
+            <div class="timeline-line-story"></div>
+
+            <!-- PROLOG -->
+            <div class="timeline-point reveal-cinematic">
+                <span class="point-dot-story"></span>
+                <p class="point-text">Setiap kisah indah berawal dari satu jepretan sederhana...</p>
+            </div>
+
+            <!-- BAB 1: KAMERA (RAMAH ORANG TUA) -->
+            <div class="timeline-content reveal-cinematic">
+                <div class="magic-camera-container" onclick="this.classList.add('snapped')">
+                    
+                    <!-- Indikator Bantuan Untuk Semua Kalangan -->
+                    <div class="tap-indicator">
+                        <span class="tap-icon">👇</span>
+                        <span class="tap-text">Sentuh Kameranya</span>
                     </div>
 
-                    <!-- Foto 2 -->
-                    <div class="hanging-photo" style="--swing-delay: -1.2s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('2.jpg')">
-                            <img src="2.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Lari-larian</div>
-                        </div>
+                    <div class="camera-body">
+                        <div class="camera-lens"><div class="lens-reflection"></div></div>
+                        <div class="camera-flash"></div>
+                        <div class="camera-button"></div>
+                        <div class="camera-slot"></div>
                     </div>
-
-                    <!-- Foto 3 -->
-                    <div class="hanging-photo" style="--swing-delay: -2.5s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('3.jpg')">
-                            <img src="3.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Di Taman Hijau</div>
-                        </div>
+                    
+                    <div class="polaroid-printout">
+                        <img src="1.jpg" alt="Masa SMA" loading="lazy">
+                        <div class="polaroid-text">Kilas Balik</div>
+                        <span class="scroll-down-hint">Lanjut scroll ke bawah ↓</span>
                     </div>
-
-                    <!-- Foto 4 -->
-                    <div class="hanging-photo" style="--swing-delay: -0.8s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('4.jpg')">
-                            <img src="4.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Bawah Pohon</div>
-                        </div>
-                    </div>
-
-                    <!-- Foto 5 -->
-                    <div class="hanging-photo" style="--swing-delay: -1.9s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('5.jpg')">
-                            <img src="5.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">SMAN 6</div>
-                        </div>
-                    </div>
-
-                    <!-- Foto 6 -->
-                    <div class="hanging-photo" style="--swing-delay: -3.1s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('6.jpg')">
-                            <img src="6.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Nugas Bareng</div>
-                        </div>
-                    </div>
-
-                    <!-- Foto 7 -->
-                    <div class="hanging-photo" style="--swing-delay: -0.4s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('7.jpg')">
-                            <img src="7.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Kisah Kita</div>
-                        </div>
-                    </div>
-
-                    <!-- Foto 8 -->
-                    <div class="hanging-photo" style="--swing-delay: -2.2s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('8.jpg')">
-                            <img src="8.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Awas Meng! 🐈</div>
-                        </div>
-                    </div>
-
-                    <!-- Foto 9 -->
-                    <div class="hanging-photo" style="--swing-delay: -1.5s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('9.jpg')">
-                            <img src="9.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Teduh</div>
-                        </div>
-                    </div>
-
-                    <!-- Foto 10 -->
-                    <div class="hanging-photo" style="--swing-delay: -3.6s;">
-                        <div class="wooden-clip"></div>
-                        <div class="photo-paper zoomable" onclick="openLightbox('10.jpg')">
-                            <img src="10.jpg" alt="Taufik Rahma" loading="lazy">
-                            <div class="photo-caption">Rebahan Dulu</div>
-                        </div>
-                    </div>
+                    <div class="camera-flash-light"></div>
                 </div>
             </div>
 
-            <!-- Tiket Bioskop Klasik Tetap Ada di Bawah -->
-            <div class="ticket-wrapper animate-slide-up" style="margin-top: 80px; padding: 0 20px;">
-                <div class="vintage-ticket">
-                    <!-- Bagian Kiri Tiket -->
-                    <div class="ticket-left">
-                        <span class="ticket-type">PREMIERE ADMISSION</span>
-                        <h3 class="movie-title">Kisah Kasih di Sekolah</h3>
-                        <p class="ticket-cast">Starring: Taufik & Rahma<br>Director: Destiny</p>
+            <!-- TRANSISI 1 -->
+            <div class="timeline-point reveal-cinematic" style="margin-top: 150px;">
+                <span class="point-dot-story"></span>
+                <p class="point-text">Memori itu kemudian dicetak, dibiarkan mengering bersama waktu...</p>
+            </div>
+
+            <!-- BAB 2: RUANG CUCI CETAK (JEMURAN FOTO) -->
+            <div class="timeline-content reveal-cinematic">
+                <div class="jemuran-wrapper" style="width: 100%; position: relative; z-index: 5;">
+                    
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--bg-dark);">Ruang Cuci Cetak</h2>
+                        <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--accent-hover); font-style: italic;">(Geser ke samping & sentuh fotonya)</p>
+                    </div>
+
+                    <!-- Area Scroll Jemuran -->
+                    <div class="clothesline-scroll">
+                        <div class="hanging-container">
+                            <div class="hanging-photo" style="--swing-delay: 0s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('1.jpg')">
+                                    <img src="1.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Senyum SMA</div>
+                                </div>
+                            </div>
+                            <div class="hanging-photo" style="--swing-delay: -1.2s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('2.jpg')">
+                                    <img src="2.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Lari-larian</div>
+                                </div>
+                            </div>
+                            <div class="hanging-photo" style="--swing-delay: -2.5s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('3.jpg')">
+                                    <img src="3.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Di Taman Hijau</div>
+                                </div>
+                            </div>
+                            <div class="hanging-photo" style="--swing-delay: -0.8s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('4.jpg')">
+                                    <img src="4.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Bawah Pohon</div>
+                                </div>
+                            </div>
+                            <div class="hanging-photo" style="--swing-delay: -1.9s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('5.jpg')">
+                                    <img src="5.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">SMAN 6</div>
+                                </div>
+                            </div>
+                            <div class="hanging-photo" style="--swing-delay: -3.1s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('6.jpg')">
+                                    <img src="6.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Nugas Bareng</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- TRANSISI AKHIR -->
+            <div class="timeline-point reveal-cinematic" style="margin-top: 50px;">
+                <span class="point-dot-story"></span>
+                <p class="point-text">Namun dari ribuan lembar kenangan, inilah satu yang kami bingkai selamanya...</p>
+            </div>
+
+            <!-- BAB 3: BINGKAI ABADI (PENUTUP 3D) -->
+            <div class="timeline-content reveal-cinematic" style="padding-bottom: 80px;">
+                <div class="frame-flip-container" onclick="this.classList.toggle('flipped')">
+                    
+                    <div class="tap-indicator" style="top: -40px;">
+                        <span class="tap-icon">👇</span>
+                        <span class="tap-text" style="background: var(--bg-dark);">Sentuh Bingkai</span>
+                    </div>
+
+                    <div class="frame-flip-inner">
+                        <!-- Sisi Depan: Bingkai -->
+                        <div class="frame-front">
+                            <div class="wooden-frame">
+                                <div class="frame-matboard">
+                                    <img src="6.jpg" alt="Mahakarya Abadi" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
                         
-                        <div class="ticket-info-row">
-                            <div class="info-block">
-                                <span class="label">DATE</span>
-                                <span class="value">13.12.26</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="label">STUDIO</span>
-                                <span class="value">SMAN 6</span>
-                            </div>
-                            <div class="info-block">
-                                <span class="label">SEAT</span>
-                                <span class="value">VIP</span>
+                        <!-- Sisi Belakang: Pesan -->
+                        <div class="frame-back">
+                            <div class="back-message-content">
+                                <span class="icon-ring">💍</span>
+                                <p class="sincere-text">"Sebuah perjalanan visual yang kini menemukan pelabuhan terakhirnya.</p>
+                                <p class="sincere-text">Terima kasih telah hadir dan menjadi saksi mahakarya terindah dalam hidup kami."</p>
+                                <div class="back-signature">Taufik & Rahma</div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Sobekan Tiket -->
-                    <div class="ticket-rip"></div>
-                    
-                    <!-- Bagian Kanan Tiket -->
-                    <div class="ticket-right">
-                        <span class="admit-text">ADMIT<br>TWO</span>
-                        <div class="barcode">|| |||| | ||| ||| | |||</div>
-                        <span class="ticket-number">#TR-131226</span>
-                    </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
 
+    <!-- ========================================== -->
     <!-- WEDDING GIFT SECTION -->
+    <!-- ========================================== -->
     <section id="gift" class="parallax-bg bg-nature" style="background-image: url('5.jpg');">
         <div class="content-box glass-container animate-slide-up" style="max-width: 750px;">
             <h2 class="section-title animate-zoom" style="color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,0.5);">Tanda Kasih</h2>
@@ -295,97 +308,38 @@
             
             <div id="gift-wrapper" class="gift-hidden">
                 <div class="gift-container">
-                    <!-- BCA -->
-                    <div class="gift-card premium-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" class="bank-logo">
-                        <p class="rek-number">7285601291</p>
-                        <p class="rek-name">a.n Ahmad Taufik</p>
-                        <button class="btn-copy" onclick="copyText('7285601291', this)">Salin BCA</button>
-                    </div>
-
-                    <!-- BRI -->
-                    <div class="gift-card premium-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="BRI" class="bank-logo">
-                        <p class="rek-number">010501021730535</p>
-                        <p class="rek-name">a.n Ahmad Taufik</p>
-                        <button class="btn-copy" onclick="copyText('010501021730535', this)">Salin BRI</button>
-                    </div>
-
-                    <!-- MANDIRI -->
-                    <div class="gift-card premium-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" class="bank-logo">
-                        <p class="rek-number">1820018239178</p>
-                        <p class="rek-name">a.n Ahmad Taufik</p>
-                        <button class="btn-copy" onclick="copyText('1820018239178', this)">Salin Mandiri</button>
-                    </div>
-
-                    <!-- DANA -->
-                    <div class="gift-card premium-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA" class="bank-logo">
-                        <p class="rek-number">083195333168</p>
-                        <p class="rek-name">a.n Ahmad Taufik</p>
-                        <button class="btn-copy" onclick="copyText('083195333168', this)">Salin DANA</button>
-                    </div>
-
-                    <!-- ALAMAT KADO FISIK (WANITA) -->
-                    <div class="gift-card address-card">
-                        <h3 class="bank-name" style="font-size: 1.1rem;">Kirim Kado (Mempelai Wanita)</h3>
-                        <p class="rek-name" style="font-size: 0.95rem; line-height: 1.5; margin: 15px 0;">
-                            <strong>Penerima: Siti Rahmawati / Keluarga</strong><br>
-                            Jl. Tegallega, Tegallega, Kec. Warungkondang<br>
-                            Kabupaten Cianjur, Jawa Barat 43261
-                        </p>
-                        <button class="btn-copy" onclick="copyText('Siti Rahmawati\nJl. Tegallega, Tegallega, Kec. Warungkondang, Kabupaten Cianjur, Jawa Barat 43261', this)">Salin Alamat</button>
-                    </div>
-
-                    <!-- ALAMAT KADO FISIK (PRIA) -->
-                    <div class="gift-card address-card">
-                        <h3 class="bank-name" style="font-size: 1.1rem;">Kirim Kado (Mempelai Pria)</h3>
-                        <p class="rek-name" style="font-size: 0.95rem; line-height: 1.5; margin: 15px 0;">
-                            <strong>Penerima: Ahmad Taufik</strong><br>
-                            Kp. Tanjakan RT.004/RW.011<br>
-                            Desa Sukajaya, Kec. Cugenang<br>
-                            Kabupaten Cianjur
-                        </p>
-                        <button class="btn-copy" onclick="copyText('Ahmad Taufik\nKp. Tanjakan RT.004/RW.011, Desa Sukajaya, Kec. Cugenang, Kabupaten Cianjur', this)">Salin Alamat</button>
-                    </div>
+                    <div class="gift-card premium-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" class="bank-logo"><p class="rek-number">7285601291</p><p class="rek-name">a.n Ahmad Taufik</p><button class="btn-copy" onclick="copyText('7285601291', this)">Salin BCA</button></div>
+                    <div class="gift-card premium-card"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="BRI" class="bank-logo"><p class="rek-number">010501021730535</p><p class="rek-name">a.n Ahmad Taufik</p><button class="btn-copy" onclick="copyText('010501021730535', this)">Salin BRI</button></div>
+                    <div class="gift-card premium-card"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg" alt="Mandiri" class="bank-logo"><p class="rek-number">1820018239178</p><p class="rek-name">a.n Ahmad Taufik</p><button class="btn-copy" onclick="copyText('1820018239178', this)">Salin Mandiri</button></div>
+                    <div class="gift-card premium-card"><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA" class="bank-logo"><p class="rek-number">083195333168</p><p class="rek-name">a.n Ahmad Taufik</p><button class="btn-copy" onclick="copyText('083195333168', this)">Salin DANA</button></div>
+                    <div class="gift-card address-card"><h3 class="bank-name" style="font-size: 1.1rem;">Kirim Kado (Mempelai Wanita)</h3><p class="rek-name" style="font-size: 0.95rem; line-height: 1.5; margin: 15px 0;"><strong>Penerima: Siti Rahmawati / Keluarga</strong><br>Jl. Tegallega, Tegallega, Kec. Warungkondang<br>Kabupaten Cianjur, Jawa Barat 43261</p><button class="btn-copy" onclick="copyText('Siti Rahmawati\nJl. Tegallega, Tegallega, Kec. Warungkondang, Kabupaten Cianjur, Jawa Barat 43261', this)">Salin Alamat</button></div>
+                    <div class="gift-card address-card"><h3 class="bank-name" style="font-size: 1.1rem;">Kirim Kado (Mempelai Pria)</h3><p class="rek-name" style="font-size: 0.95rem; line-height: 1.5; margin: 15px 0;"><strong>Penerima: Ahmad Taufik</strong><br>Kp. Tanjakan RT.004/RW.011<br>Desa Sukajaya, Kec. Cugenang<br>Kabupaten Cianjur</p><button class="btn-copy" onclick="copyText('Ahmad Taufik\nKp. Tanjakan RT.004/RW.011, Desa Sukajaya, Kec. Cugenang, Kabupaten Cianjur', this)">Salin Alamat</button></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ========================================== -->
     <!-- RSVP & WISHES SECTION -->
+    <!-- ========================================== -->
     <section id="rsvp" class="solid-bg">
         <div class="content-box clean-box animate-zoom">
             <h2 class="section-title animate-slide-up">RSVP & Ucapan</h2>
             <p class="salam animate-slide-up">Konfirmasi kehadiran & berikan doa terbaik untuk kami</p>
-            
-            <div id="custom-toast" class="toast-hidden">
-                <div class="toast-content">
-                    <span class="toast-icon">✨</span>
-                    <p class="toast-message" id="toast-message">Terima kasih! Doa & konfirmasi Anda telah tersimpan.</p>
-                </div>
-            </div>
-
+            <div id="custom-toast" class="toast-hidden"><div class="toast-content"><span class="toast-icon">✨</span><p class="toast-message" id="toast-message">Terima kasih! Doa & konfirmasi Anda telah tersimpan.</p></div></div>
             <form id="rsvpForm" class="animate-slide-up">
                 <input type="text" id="guestName" placeholder="Nama Lengkap Anda" required>
-                
                 <div class="custom-select" id="customSelect">
-                    <div class="select-selected">
-                        <span id="selected-text">Konfirmasi Kehadiran</span>
-                    </div>
+                    <div class="select-selected"><span id="selected-text">Konfirmasi Kehadiran</span></div>
                     <div class="select-items select-hide">
                         <div data-value="Hadir">Ya, Saya Akan Hadir</div>
                         <div data-value="Berhalangan">Maaf, Berhalangan Hadir</div>
                     </div>
                     <input type="hidden" id="attendance" required>
                 </div>
-
                 <textarea id="guestWish" rows="4" placeholder="Tulis ucapan dan doa untuk kami..." required></textarea>
-                <!-- PASTIKAN ADA CLASS INI: submit-btn -->
                 <button type="submit" class="btn-primary submit-btn animate-zoom">Kirim Pesan</button>
             </form>
-
             <div id="wishes-container" class="wishes-wrapper animate-slide-up" style="display: none;">
                 <h3 class="wishes-title">Buku Tamu</h3>
                 <div id="wishes-list"></div>
@@ -394,13 +348,14 @@
         </div>
     </section>
 
+    <!-- ========================================== -->
     <!-- FOOTER -->
+    <!-- ========================================== -->
     <footer class="animate-slide-up">
-        <h2 class="title-couple animate-zoom" style="font-size: 2.5rem; margin-bottom: 10px;">Taufik & Rahma</h2>
+        <h2 class="title-couple animate-zoom" style="font-size: 2.2rem; margin-bottom: 5px;">Taufik & Rahma</h2>
         <p class="animate-slide-up">Terima Kasih</p>
     </footer>
 
-    <!-- Firebase SDK & Script -->
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
     <script src="script.js"></script>
