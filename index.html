@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="favicon.png"> 
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Wedding of Taufik & Rahma">
-    <meta property="og:description" content="Kisah kasih kami di sekolah, berujung di pelaminan. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu untuk hadir di acara pernikahan kami.">
+    <meta property="og:description" content="Dari candaan di masa seragam, berujung di pelaminan. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Sahabat untuk hadir di acara bahagia kami.">
     <meta property="og:url" content="https://taufik-rahma.web.app/"> 
     <meta property="og:image" content="1.jpg"> 
     <meta property="og:image:width" content="1200">
@@ -155,25 +155,24 @@
         <div class="scrollytelling-wrapper visual-theme">
             
             <!-- JUDUL UTAMA CERITA -->
-            <div class="reveal-cinematic" style="text-align: center; margin-bottom: 50px; padding: 0 20px;">
-                <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--bg-dark); margin-bottom: 10px;">Kisah Perjalanan Kami</h2>
-                <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--accent-color); font-style: italic;">Gulir ke bawah perlahan untuk mengikuti cerita ini...</p>
+            <div class="reveal-cinematic" style="text-align: center; margin-bottom: 20px; padding: 0 20px;">
+                <h2 style="font-family: var(--font-serif); font-size: 2.6rem; color: var(--bg-dark); margin-bottom: 5px;">Cerita Kita</h2>
+                <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--accent-color); font-style: italic;">Gulir ke bawah ya, kita kilas balik sebentar...</p>
             </div>
 
-            <!-- Garis Waktu Penghubung Cerita -->
-            <div class="timeline-line-story"></div>
+            <!-- Garis Penghubung Animasi -->
+            <div class="connector-line reveal-line"></div>
 
             <!-- PROLOG -->
             <div class="timeline-point reveal-cinematic">
                 <span class="point-dot-story"></span>
-                <p class="point-text">Setiap kisah indah berawal dari satu jepretan sederhana...</p>
+                <p class="point-text">Semuanya berawal dari masa abu-abu ini...</p>
             </div>
 
-            <!-- BAB 1: KAMERA (RAMAH ORANG TUA) -->
+            <!-- BAB 1: KAMERA (MASA SMA) -->
             <div class="timeline-content reveal-cinematic">
                 <div class="magic-camera-container" onclick="this.classList.add('snapped')">
                     
-                    <!-- Indikator Bantuan Untuk Semua Kalangan -->
                     <div class="tap-indicator">
                         <span class="tap-icon">👇</span>
                         <span class="tap-text">Sentuh Kameranya</span>
@@ -188,65 +187,83 @@
                     
                     <div class="polaroid-printout">
                         <img src="1.jpg" alt="Masa SMA" loading="lazy">
-                        <div class="polaroid-text">Kilas Balik</div>
-                        <span class="scroll-down-hint">Lanjut scroll ke bawah ↓</span>
+                        <div class="polaroid-text">Zaman Sekolah</div>
+                        <span class="scroll-down-hint">Lanjut scroll ↓</span>
                     </div>
                     <div class="camera-flash-light"></div>
                 </div>
             </div>
 
+            <!-- Jarak Ekstra untuk Foto yang Keluar -->
+            <div style="height: 120px;"></div>
+
+            <div class="connector-line reveal-line"></div>
+
             <!-- TRANSISI 1 -->
-            <div class="timeline-point reveal-cinematic" style="margin-top: 150px;">
+            <div class="timeline-point reveal-cinematic">
                 <span class="point-dot-story"></span>
-                <p class="point-text">Memori itu kemudian dicetak, dibiarkan mengering bersama waktu...</p>
+                <p class="point-text" style="max-width: 85%;">Siapa sangka ya? Candaan di lorong sekolah dulu malah bawa kita ke titik seserius ini...</p>
             </div>
 
-            <!-- BAB 2: RUANG CUCI CETAK (JEMURAN FOTO) -->
+            <div class="connector-line reveal-line"></div>
+
+            <!-- BAB 2: RUANG CUCI CETAK (CAMPURAN FOTO JEMURAN DIPERBANYAK) -->
             <div class="timeline-content reveal-cinematic">
                 <div class="jemuran-wrapper" style="width: 100%; position: relative; z-index: 5;">
                     
-                    <div style="text-align: center; margin-bottom: 30px;">
-                        <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--bg-dark);">Ruang Cuci Cetak</h2>
-                        <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--accent-hover); font-style: italic;">(Geser ke samping & sentuh fotonya)</p>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--bg-dark);">Lembar Cerita</h2>
+                        <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--accent-hover); font-style: italic;">(Bisa digeser & diklik fotonya)</p>
                     </div>
 
-                    <!-- Area Scroll Jemuran -->
                     <div class="clothesline-scroll">
                         <div class="hanging-container">
                             <div class="hanging-photo" style="--swing-delay: 0s;">
                                 <div class="wooden-clip"></div>
                                 <div class="photo-paper zoomable" onclick="openLightbox('1.jpg')">
-                                    <img src="1.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Senyum SMA</div>
+                                    <img src="1.jpg" alt="Kenangan 1" loading="lazy"><div class="photo-caption">Senyum SMA</div>
                                 </div>
                             </div>
                             <div class="hanging-photo" style="--swing-delay: -1.2s;">
                                 <div class="wooden-clip"></div>
                                 <div class="photo-paper zoomable" onclick="openLightbox('2.jpg')">
-                                    <img src="2.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Lari-larian</div>
+                                    <img src="2.jpg" alt="Kenangan 2" loading="lazy"><div class="photo-caption">Main Bareng</div>
                                 </div>
                             </div>
                             <div class="hanging-photo" style="--swing-delay: -2.5s;">
                                 <div class="wooden-clip"></div>
                                 <div class="photo-paper zoomable" onclick="openLightbox('3.jpg')">
-                                    <img src="3.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Di Taman Hijau</div>
+                                    <img src="3.jpg" alt="Kenangan 3" loading="lazy"><div class="photo-caption">Di Taman</div>
                                 </div>
                             </div>
                             <div class="hanging-photo" style="--swing-delay: -0.8s;">
                                 <div class="wooden-clip"></div>
                                 <div class="photo-paper zoomable" onclick="openLightbox('4.jpg')">
-                                    <img src="4.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Bawah Pohon</div>
+                                    <img src="4.jpg" alt="Kenangan 4" loading="lazy"><div class="photo-caption">Bawah Pohon</div>
                                 </div>
                             </div>
                             <div class="hanging-photo" style="--swing-delay: -1.9s;">
                                 <div class="wooden-clip"></div>
                                 <div class="photo-paper zoomable" onclick="openLightbox('5.jpg')">
-                                    <img src="5.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">SMAN 6</div>
+                                    <img src="5.jpg" alt="Kenangan 5" loading="lazy"><div class="photo-caption">Tumbuh Bersama</div>
                                 </div>
                             </div>
                             <div class="hanging-photo" style="--swing-delay: -3.1s;">
                                 <div class="wooden-clip"></div>
                                 <div class="photo-paper zoomable" onclick="openLightbox('6.jpg')">
-                                    <img src="6.jpg" alt="Taufik Rahma" loading="lazy"><div class="photo-caption">Nugas Bareng</div>
+                                    <img src="6.jpg" alt="Kenangan 6" loading="lazy"><div class="photo-caption">Melangkah</div>
+                                </div>
+                            </div>
+                            <div class="hanging-photo" style="--swing-delay: -0.5s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('7.jpg')">
+                                    <img src="7.jpg" alt="Kenangan 7" loading="lazy"><div class="photo-caption">Menuju Sah</div>
+                                </div>
+                            </div>
+                            <div class="hanging-photo" style="--swing-delay: -2.2s;">
+                                <div class="wooden-clip"></div>
+                                <div class="photo-paper zoomable" onclick="openLightbox('8.jpg')">
+                                    <img src="8.jpg" alt="Kenangan 8" loading="lazy"><div class="photo-caption">Awas Meng! 🐈</div>
                                 </div>
                             </div>
                         </div>
@@ -255,23 +272,27 @@
                 </div>
             </div>
 
+            <div class="connector-line reveal-line"></div>
+
             <!-- TRANSISI AKHIR -->
-            <div class="timeline-point reveal-cinematic" style="margin-top: 50px;">
+            <div class="timeline-point reveal-cinematic">
                 <span class="point-dot-story"></span>
-                <p class="point-text">Namun dari ribuan lembar kenangan, inilah satu yang kami bingkai selamanya...</p>
+                <p class="point-text" style="max-width: 85%;">Dan dari semua perjalanan seru itu, akhirnya kita mantap buat ngambil langkah besar ini...</p>
             </div>
 
-            <!-- BAB 3: BINGKAI ABADI (PENUTUP 3D) -->
-            <div class="timeline-content reveal-cinematic" style="padding-bottom: 80px;">
+            <div class="connector-line reveal-line"></div>
+
+            <!-- BAB 3: BINGKAI ABADI (JAS & GAUN) -->
+            <div class="timeline-content reveal-cinematic" style="padding-bottom: 40px;">
                 <div class="frame-flip-container" onclick="this.classList.toggle('flipped')">
                     
-                    <div class="tap-indicator" style="top: -40px;">
+                    <div class="tap-indicator" style="top: -45px;">
                         <span class="tap-icon">👇</span>
-                        <span class="tap-text" style="background: var(--bg-dark);">Sentuh Bingkai</span>
+                        <span class="tap-text" style="background: var(--bg-dark); color: #fff;">Sentuh Bingkainya</span>
                     </div>
 
                     <div class="frame-flip-inner">
-                        <!-- Sisi Depan: Bingkai -->
+                        <!-- Sisi Depan: Bingkai Foto Jas & Gaun -->
                         <div class="frame-front">
                             <div class="wooden-frame">
                                 <div class="frame-matboard">
@@ -284,8 +305,9 @@
                         <div class="frame-back">
                             <div class="back-message-content">
                                 <span class="icon-ring">💍</span>
-                                <p class="sincere-text">"Sebuah perjalanan visual yang kini menemukan pelabuhan terakhirnya.</p>
-                                <p class="sincere-text">Terima kasih telah hadir dan menjadi saksi mahakarya terindah dalam hidup kami."</p>
+                                <p class="sincere-text">"Dari yang cuma sekadar teman buat cerita, sampai akhirnya berani bangun cerita yang baru bareng-bareng.</p>
+                                <p class="sincere-text">Makasih ya udah mau nemenin awal perjalanan kita."</p>
+                                <!-- Presisi teks diperbaiki -->
                                 <div class="back-signature">Taufik & Rahma</div>
                             </div>
                         </div>
