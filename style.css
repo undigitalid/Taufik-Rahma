@@ -29,19 +29,15 @@
 }
 
 /* ==========================================================================
-   2. RESET & GLOBAL STYLES (MENGATASI SCROLL SAMPING)
+   2. RESET & GLOBAL STYLES
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100vw; }
-body { font-family: var(--font-sans); background-color: var(--bg-main); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; width: 100%; max-width: 100vw; }
-
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-main); }
-::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: var(--bg-dark); }
+html, body { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100vw; font-family: var(--font-sans); background-color: var(--bg-main); color: var(--text-dark); line-height: 1.7; }
+::-webkit-scrollbar { display: none; }
+html { scrollbar-width: none; }
 
 /* ==========================================================================
-   3. TYPOGRAPHY & ALIGNMENT (UKURAN DIPERKECIL AGAR ESTETIK)
+   3. TYPOGRAPHY & ALIGNMENT
    ========================================================================== */
 h1, h2, h3, h4, h5, h6, p, span, a, label { text-align: center; width: 100%; }
 h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color: var(--text-dark); font-weight: 600; }
@@ -50,17 +46,12 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 /* ==========================================================================
    4. LAYOUT SYSTEM & PARALLAX
    ========================================================================== */
-.parallax-bg {
-    position: relative; width: 100%; min-height: 100vh;
-    background-attachment: fixed; background-position: center; background-repeat: no-repeat;
-    background-size: cover; padding: 80px 20px; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; overflow: hidden; z-index: 1;
-}
+.parallax-bg { position: relative; width: 100%; min-height: 100vh; background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; padding: 80px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; z-index: 1; }
 .parallax-bg::before { content: ''; position: absolute; inset: 0; background: rgba(44, 51, 46, 0.35); z-index: -1; }
 .solid-bg { background-color: var(--bg-main); padding: 80px 20px; display: flex; justify-content: center; width: 100%; overflow: hidden; }
 
 /* ==========================================================================
-   5. SHAPE CARDS (KOTAK KONTEN KACA & BERSIH)
+   5. SHAPE CARDS 
    ========================================================================== */
 .glass-container { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 20px; padding: 50px 25px; max-width: 600px; box-shadow: var(--shadow-lg); z-index: 2; width: 100%; }
 #gift .glass-container { background: rgba(44, 51, 46, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); }
@@ -80,8 +71,6 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 .guest-info { margin-bottom: 25px; }
 .guest-info p { font-size: 0.8rem; margin-bottom: 5px; color: var(--text-dark); }
 .guest-name { font-size: 1.3rem; color: var(--bg-dark); font-weight: bold; }
-
-/* Ukuran Tombol Diperkecil */
 .btn-primary, .submit-btn { background-color: var(--accent-color); color: #fff; border: none; padding: 12px 28px; border-radius: 30px; font-size: 0.85rem; cursor: pointer; margin-top: 15px; font-family: var(--font-sans); font-weight: 500; transition: var(--transition-smooth); text-transform: uppercase; letter-spacing: 1.5px; box-shadow: var(--shadow-md); display: inline-block; }
 .btn-primary:hover, .submit-btn:hover { background-color: var(--bg-dark); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .btn-unlocking { transform: scale(0) !important; opacity: 0; pointer-events: none; }
@@ -94,15 +83,31 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 .ayat { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; font-weight: 400; max-width: 550px; line-height: 1.8; color: #fff; text-shadow: 1px 1px 8px rgba(0,0,0,0.5); margin: 0 auto; }
 
 /* ==========================================================================
-   8. BRIDE & GROOM SECTION
+   8. BRIDE & GROOM SECTION (FRAME PROFILE DIPERKECIL & ESTETIK)
    ========================================================================== */
 .salam { font-size: 0.85rem; margin-bottom: 40px; line-height: 1.7; color: var(--accent-hover); }
 .couple-cards { display: flex; flex-direction: column; gap: 50px; width: 100%; align-items: center; }
 .person { display: flex; flex-direction: column; align-items: center; width: 100%; }
-.aesthetic-frame { width: 200px; height: 280px; border-radius: 100px 100px 0 0; overflow: hidden; padding: 5px; background-color: #fff; margin-bottom: 20px; box-shadow: var(--shadow-md); position: relative; transition: var(--transition-smooth); }
-.aesthetic-frame:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
-.aesthetic-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 95px 95px 0 0; }
-.name-script { font-size: 3.5rem; margin-bottom: -5px; line-height: 1; }
+
+/* Frame diubah ukurannya biar ngga raksasa dan lengkungannya lebih rapi */
+.aesthetic-frame { 
+    width: 170px; 
+    height: 240px; 
+    border-radius: 85px 85px 8px 8px; 
+    overflow: hidden; 
+    padding: 6px; 
+    background-color: #fff; 
+    margin-bottom: 15px; 
+    box-shadow: 0 10px 25px rgba(58, 71, 61, 0.15); 
+    position: relative; 
+    transition: var(--transition-smooth); 
+}
+.aesthetic-frame:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(58, 71, 61, 0.25); }
+.aesthetic-frame img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    border-radius: 80px 80px 4px 4px; 
+}
+.name-script { font-size: 3.2rem; margin-bottom: -5px; line-height: 1; }
 .full-name { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; }
 .parents { font-size: 0.8rem; margin-bottom: 12px; color: var(--accent-hover); }
 .ig-link { color: var(--accent-color); text-decoration: none; font-size: 0.8rem; padding: 6px 18px; border: 1px solid var(--accent-color); border-radius: 30px; transition: var(--transition-smooth); display: inline-block; width: auto; font-weight: 500; }
@@ -129,54 +134,49 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 /* ==========================================================================
    10. SCROLLYTELLING MASTERPIECE 
    ========================================================================== */
-.scrollytelling-wrapper.visual-theme {
-    position: relative; width: 100%; max-width: 900px; display: flex; flex-direction: column; align-items: center; margin: 0 auto; overflow: hidden;
-}
+.scrollytelling-wrapper.visual-theme { position: relative; width: 100%; max-width: 900px; display: flex; flex-direction: column; align-items: center; margin: 0 auto; }
 
-/* Efek Reveal Cinematic */
-.reveal-cinematic {
-    opacity: 0; transform: translateY(80px); transition: opacity 1.5s ease-out, transform 1.5s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform;
-}
+/* Animasi Muncul/Hilang dua arah */
+.reveal-cinematic { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform; }
 .reveal-cinematic.is-visible { opacity: 1; transform: translateY(0); }
 
-/* Garis Waktu Lembut */
-.timeline-line-story {
-    position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: 2px;
-    background: linear-gradient(to bottom, transparent, rgba(106, 123, 109, 0.4) 5%, rgba(106, 123, 109, 0.4) 95%, transparent); z-index: 0;
-}
-.timeline-point { position: relative; display: flex; flex-direction: column; align-items: center; margin: 60px 0; z-index: 2; background: var(--bg-main); padding: 10px 0; }
-.point-dot-story { width: 12px; height: 12px; background: var(--accent-color); border-radius: 50%; margin-bottom: 10px; box-shadow: 0 0 0 6px rgba(106, 123, 109, 0.15); }
-.point-text { font-family: var(--font-serif); font-size: 1.1rem; color: var(--bg-dark); font-style: italic; text-align: center; background: var(--bg-main); padding: 0 15px; line-height: 1.5; }
+/* Garis Hubung Animasi (Tumbuh ke Bawah) */
+.connector-line { width: 2px; height: 0px; background: var(--accent-color); margin: 15px auto; opacity: 0.6; transition: height 1s cubic-bezier(0.25, 1, 0.5, 1); }
+.connector-line.is-visible { height: 70px; }
+
+.timeline-point { position: relative; display: flex; flex-direction: column; align-items: center; z-index: 2; padding: 0; margin-bottom: 10px; }
+.point-dot-story { width: 12px; height: 12px; background: var(--accent-color); border-radius: 50%; box-shadow: 0 0 0 5px rgba(106, 123, 109, 0.15); }
+.point-text { font-family: var(--font-serif); font-size: 1.15rem; color: var(--bg-dark); font-style: italic; text-align: center; line-height: 1.6; margin-top: 15px; }
 .timeline-content { position: relative; z-index: 2; width: 100%; display: flex; justify-content: center; padding: 0; }
 
-/* KAMERA SEKALI TAP */
-.magic-camera-container { position: relative; width: 200px; height: 160px; cursor: pointer; margin-top: 30px; }
-.camera-body { width: 100%; height: 100%; background: #2a312c; border-radius: 15px; position: absolute; top: 0; z-index: 3; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-bottom: 10px solid #1c221e; display: flex; justify-content: center; align-items: center; }
+/* KAMERA */
+.magic-camera-container { position: relative; width: 200px; height: 160px; cursor: pointer; margin-top: 20px; background: var(--bg-main); padding: 10px; z-index: 2; }
+.camera-body { width: 100%; height: 100%; background: #2a312c; border-radius: 15px; position: absolute; top: 0; left: 0; z-index: 3; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-bottom: 10px solid #1c221e; display: flex; justify-content: center; align-items: center; }
 .camera-lens { width: 80px; height: 80px; background: #111; border-radius: 50%; border: 10px solid #d4c4a8; box-shadow: inset 0 0 15px #000; position: relative; }
 .lens-reflection { width: 20px; height: 20px; background: rgba(255,255,255,0.3); border-radius: 50%; position: absolute; top: 8px; left: 8px; }
 .camera-flash { position: absolute; top: 15px; left: 15px; width: 25px; height: 15px; background: #e1e3e0; border-radius: 3px; box-shadow: inset 0 0 5px rgba(0,0,0,0.5); }
 .camera-button { position: absolute; top: -12px; right: 25px; width: 25px; height: 12px; background: #a83232; border-radius: 4px 4px 0 0; transition: transform 0.2s; }
 .camera-slot { position: absolute; bottom: 8px; width: 120px; height: 5px; background: #000; border-radius: 5px; box-shadow: inset 0 2px 5px #000; }
-.polaroid-printout { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%) translateY(0) scale(0.8); width: 140px; height: 170px; background: #fff; padding: 8px 8px 30px 8px; border-radius: 4px; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.2); opacity: 0; transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s; }
-.polaroid-printout img { width: 100%; height: 100%; object-fit: cover; filter: sepia(30%) contrast(1.1); }
-.polaroid-text { position: absolute; bottom: 5px; left: 0; width: 100%; text-align: center; font-family: var(--font-handwriting); font-size: 1rem; color: #333; font-weight: 600; }
+.polaroid-printout { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%) translateY(0) scale(0.8); width: 160px; height: auto; min-height: 190px; background: #fff; padding: 10px 10px 45px 10px; border-radius: 4px; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.2); opacity: 0; transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s; }
+.polaroid-printout img { width: 100%; height: 140px; object-fit: cover; filter: sepia(20%) contrast(1.1); }
+.polaroid-text { position: absolute; bottom: 22px; left: 0; width: 100%; text-align: center; font-family: var(--font-handwriting); font-size: 1.1rem; color: #333; font-weight: 600; }
 .camera-flash-light { position: absolute; top: -50px; left: -50px; right: -50px; bottom: -50px; background: #fff; border-radius: 30px; z-index: 10; opacity: 0; pointer-events: none; }
 
-.tap-indicator { position: absolute; top: -45px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; animation: bounceIndicator 1.5s infinite; z-index: 10; pointer-events: none; }
-.tap-indicator .tap-icon { font-size: 1.8rem; line-height: 1; margin-bottom: 5px; }
+.tap-indicator { position: absolute; top: -35px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; animation: bounceIndicator 1.5s infinite; z-index: 10; pointer-events: none; }
+.tap-indicator .tap-icon { font-size: 1.8rem; line-height: 1; margin-bottom: 2px; }
 .tap-indicator .tap-text { font-family: var(--font-sans); font-size: 0.75rem; background: var(--accent-color); color: #fff; padding: 4px 12px; border-radius: 20px; white-space: nowrap; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 @keyframes bounceIndicator { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-8px); } }
 
 .magic-camera-container.snapped .tap-indicator { opacity: 0; transition: opacity 0.3s; }
 .magic-camera-container.snapped .camera-flash-light { animation: snapFlash 0.5s ease-out; }
 .magic-camera-container.snapped .camera-button { transform: translateY(5px); }
-.magic-camera-container.snapped .polaroid-printout { transform: translateX(-50%) translateY(145px) scale(1.1); opacity: 1; transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1) 0.3s, opacity 0.5s ease 0.3s; z-index: 5; }
+.magic-camera-container.snapped .polaroid-printout { transform: translateX(-50%) translateY(165px) scale(1.1); opacity: 1; transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1) 0.3s, opacity 0.5s ease 0.3s; z-index: 5; }
 
-.scroll-down-hint { display: block; font-family: var(--font-sans); font-size: 0.65rem; color: var(--accent-color); text-align: center; margin-top: 8px; opacity: 0; transition: opacity 1s ease 1.5s; }
+.scroll-down-hint { position: absolute; bottom: 5px; left: 0; width: 100%; display: block; font-family: var(--font-sans); font-size: 0.65rem; color: var(--bg-dark); font-weight: bold; text-align: center; opacity: 0; transition: opacity 1s ease 1.5s; background: var(--bg-main); border-radius: 10px; }
 .magic-camera-container.snapped .scroll-down-hint { opacity: 1; }
 @keyframes snapFlash { 0% { opacity: 1; } 100% { opacity: 0; } }
 
-/* JEMURAN KENANGAN MENGATASI SCROLL */
+/* JEMURAN KENANGAN */
 .clothesline-scroll { width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 20px 0 60px 0; position: relative; scrollbar-width: none; -ms-overflow-style: none; }
 .clothesline-scroll::-webkit-scrollbar { display: none; }
 .hanging-container { display: inline-flex; gap: 20px; padding: 20px 30px; position: relative; min-width: max-content; align-items: flex-start; }
@@ -193,20 +193,22 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 .photo-caption { font-family: var(--font-script); font-size: 1.5rem; color: var(--text-dark); margin-top: 10px; line-height: 1; text-align: center; }
 
 /* BINGKAI 3D (PENUTUP) */
-.frame-flip-container { width: 100%; max-width: 280px; height: 350px; perspective: 1200px; cursor: pointer; margin: 0 auto; position: relative; }
+.frame-flip-container { width: 100%; max-width: 280px; height: 350px; perspective: 1200px; cursor: pointer; margin: 0 auto; position: relative; z-index: 2; padding: 10px; }
 .frame-flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1); transform-style: preserve-3d; box-shadow: 0 15px 30px rgba(0,0,0,0.25); border-radius: 4px; }
 .frame-flip-container.flipped .frame-flip-inner { transform: rotateY(180deg); }
 .frame-flip-container.flipped .tap-indicator { opacity: 0; transition: opacity 0.3s; }
-.frame-front, .frame-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 4px; }
+.frame-front, .frame-back { position: absolute; width: 100%; height: 100%; left: 0; top: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 4px; }
 .frame-front { background: #fdfbf7; }
 .wooden-frame { width: 100%; height: 100%; background: #e6d5b8; border: 15px solid #3e4741; border-radius: 4px; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); padding: 20px; display: flex; justify-content: center; align-items: center; }
 .frame-matboard { width: 100%; height: 100%; box-shadow: inset 0 0 10px rgba(0,0,0,0.2), 0 2px 5px rgba(0,0,0,0.1); background: #fff; padding: 3px; border: 1px solid #ddd; }
 .frame-matboard img { width: 100%; height: 100%; object-fit: cover; filter: sepia(10%); }
+
+/* Teks Bingkai 3D (Back) - Presisi dan Anti Numpuk */
 .frame-back { background-color: var(--bg-dark); color: #fff; transform: rotateY(180deg); border: 3px solid #d4c4a8; display: flex; justify-content: center; align-items: center; padding: 20px; }
-.back-message-content { display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(212, 196, 168, 0.3); padding: 30px 15px; height: 100%; width: 100%; justify-content: center; }
-.icon-ring { font-size: 2rem; margin-bottom: 15px; }
-.sincere-text { font-family: var(--font-serif); font-size: 1rem; line-height: 1.6; color: rgba(255, 255, 255, 0.95); margin-bottom: 10px; text-align: center; font-style: italic; }
-.back-signature { font-family: var(--font-script); font-size: 2rem; color: #d4c4a8; margin-top: 20px; }
+.back-message-content { display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(212, 196, 168, 0.3); padding: 20px 15px; height: 100%; width: 100%; justify-content: center; }
+.icon-ring { font-size: 2rem; margin-bottom: 10px; }
+.sincere-text { font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.95); margin-bottom: 8px; text-align: center; font-style: italic; }
+.back-signature { font-family: var(--font-script); font-size: 2rem; color: #d4c4a8; margin-top: 15px; white-space: nowrap; line-height: 1; }
 
 /* ==========================================================================
    11. WEDDING GIFT (ACCORDION)
@@ -259,28 +261,8 @@ input:focus, textarea:focus { outline: none; border-color: var(--accent-color); 
 .toast-content { display: flex; align-items: center; gap: 10px; width: 100%; }
 .toast-message { font-size: 0.85rem; color: var(--success-text); font-weight: 600; text-align: left; margin: 0; }
 @keyframes fadeInDownToast { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-
-/* DESAIN TOMBOL LIHAT LEBIH BANYAK */
-#btn-load-more {
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: var(--transition-smooth);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-#btn-load-more:hover {
-    background: var(--accent-color);
-    color: #fff;
-    box-shadow: var(--shadow-sm);
-}
+#btn-load-more { background: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); padding: 10px 24px; border-radius: 30px; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; cursor: pointer; margin-top: 10px; transition: var(--transition-smooth); text-transform: uppercase; letter-spacing: 1px; }
+#btn-load-more:hover { background: var(--accent-color); color: #fff; box-shadow: var(--shadow-sm); }
 
 /* ==========================================================================
    13. LIGHTBOX & MUSIC BUTTON
@@ -325,7 +307,7 @@ footer p { font-size: 0.85rem; opacity: 0.8; margin-top: 10px; letter-spacing: 3
     
     .couple-cards { flex-direction: row; justify-content: space-evenly; gap: 30px; }
     .person { width: 45%; }
-    .aesthetic-frame { width: 250px; height: 350px; border-radius: 125px 125px 0 0; }
+    .aesthetic-frame { width: 220px; height: 320px; border-radius: 110px 110px 10px 10px; }
     .name-script { font-size: 4.5rem; }
     
     .event-cards-container { flex-direction: row; justify-content: center; align-items: stretch; }
@@ -338,7 +320,6 @@ footer p { font-size: 0.85rem; opacity: 0.8; margin-top: 10px; letter-spacing: 3
     #rsvpForm, .wishes-wrapper { max-width: 600px; }
     .wish-header { flex-direction: row; align-items: center; }
 
-    /* Layout Jemuran Desktop */
     .hanging-container { gap: 30px; padding: 30px calc(50vw - 150px); }
     .hanging-photo { width: 250px; }
     .photo-paper img { height: 260px; }
@@ -347,7 +328,6 @@ footer p { font-size: 0.85rem; opacity: 0.8; margin-top: 10px; letter-spacing: 3
 
     footer .title-couple { font-size: 4.5rem; }
 }
-
 @media (min-width: 1024px) {
     .title-couple { font-size: 6rem; }
     .name-script { font-size: 5.5rem; }
