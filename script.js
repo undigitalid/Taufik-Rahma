@@ -190,8 +190,26 @@ function initCustomSelect() {
 // 5. ANIMATION SYSTEMS (SCROLL & COUNT)
 // ============================================================================
 function initScrollAnimations() {
-    // 1. Observer Standar
+    // 1. Observer Standar (Bolak-balik saat di-scroll naik/turun)
     const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            } else {
+                // Menghapus class saat tidak di layar agar animasi kembali terulang
+                entry.target.classList.remove('is-visible');
+            }
+        });
+    }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+    const targets = document.querySelectorAll('.animate-slide-up, .animate-fade-in, .animate-fade-left, .animate-fade-right, .animate-zoom');
+    
+    targets.forEach(t => {
+        if (!DOM.cover.contains(t) && t !== DOM.cover) observer.observe(t);
+    });
+
+    // 2. Observer Khusus Kisah/Cinematic & Garis Hubung (Juga Bolak-balik)
+    const cinematicObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
@@ -201,22 +219,7 @@ function initScrollAnimations() {
         });
     }, { threshold: 0.15 });
 
-    const targets = document.querySelectorAll('.animate-slide-up, .animate-fade-in, .animate-fade-left, .animate-fade-right, .animate-zoom');
-    
-    targets.forEach(t => {
-        if (!DOM.cover.contains(t) && t !== DOM.cover) observer.observe(t);
-    });
-
-    // 2. Observer Cinematic Reveal (Muncul pas di-scroll)
-    const cinematicObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            }
-        });
-    }, { threshold: 0.25 }); // Threshold lebih besar (25%) biar nunggu di-scroll dulu
-
-    const cinematicTargets = document.querySelectorAll('.reveal-cinematic');
+    const cinematicTargets = document.querySelectorAll('.reveal-cinematic, .reveal-line');
     cinematicTargets.forEach(t => cinematicObserver.observe(t));
 }
 
