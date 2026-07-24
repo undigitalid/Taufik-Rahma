@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Wedding of Taufik & Rahma</title>
     
-    <link rel="icon" type="image/png" href="favicon.png"> 
+    <!-- ========================================== -->
+    <!-- 1. LOGO WEB (FAVICON) -->
+    <!-- Pastikan ada file 'favicon.png' di dalam folder -->
+    <!-- ========================================== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" href="TR.png"> <!-- Biar logo muncul kalau di-save ke Homescreen iPhone -->
+    
+    <!-- ========================================== -->
+    <!-- 2. PREVIEW WHATSAPP & SOSMED (OPEN GRAPH) -->
+    <!-- ========================================== -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Wedding of Taufik & Rahma">
-    <meta property="og:description" content="Dari candaan di masa seragam, berujung di pelaminan. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Sahabat untuk hadir di acara bahagia kami.">
+    <meta property="og:description" content="Membingkai panjangnya cerita kita ke dalam satu hari yang paling membahagiakan. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Sahabat untuk hadir di acara bahagia kami.">
     <meta property="og:url" content="https://taufik-rahma.web.app/"> 
-    <meta property="og:image" content="1.jpg"> 
+    
+    <!-- WAJIB PAKAI URL LENGKAP SEPERTI DI BAWAH INI BIAR MUNCUL DI WA -->
+    <meta property="og:image" content="https://taufik-rahma.web.app/2.jpg"> 
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
@@ -148,26 +159,28 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- GALLERY & STORYTELLING SECTION -->
+    <!-- GALLERY & STORYTELLING SECTION (BENANG MEMORI) -->
     <!-- ========================================== -->
     <section id="gallery" class="solid-bg" style="padding: 80px 0 120px 0; overflow: hidden; position: relative;">
         
         <div class="scrollytelling-wrapper visual-theme">
             
             <!-- JUDUL UTAMA CERITA -->
-            <div class="reveal-cinematic" style="text-align: center; margin-bottom: 20px; padding: 0 20px;">
+            <div class="reveal-cinematic" style="text-align: center; margin-bottom: 10px; padding: 0 20px;">
                 <h2 style="font-family: var(--font-serif); font-size: 2.6rem; color: var(--bg-dark); margin-bottom: 5px;">Cerita Kita</h2>
                 <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--accent-color); font-style: italic;">Gulir ke bawah ya, kita kilas balik sebentar...</p>
             </div>
 
-            <!-- Garis Penghubung Animasi -->
-            <div class="connector-line reveal-line"></div>
+            <!-- Garis Penghubung Tumbuh -->
+            <div class="connector-line reveal-line" style="--line-height: 60px;"></div>
 
             <!-- PROLOG -->
             <div class="timeline-point reveal-cinematic">
                 <span class="point-dot-story"></span>
-                <p class="point-text">Semuanya berawal dari masa abu-abu ini...</p>
+                <p class="point-text">Semuanya berawal dari satu jepretan sederhana <br> dari masa abu-abu ini...</p>
             </div>
+
+            <div class="connector-line reveal-line" style="--line-height: 40px;"></div>
 
             <!-- BAB 1: KAMERA (MASA SMA) -->
             <div class="timeline-content reveal-cinematic">
@@ -194,20 +207,18 @@
                 </div>
             </div>
 
-            <!-- Jarak Ekstra untuk Foto yang Keluar -->
-            <div style="height: 120px;"></div>
-
-            <div class="connector-line reveal-line"></div>
+            <!-- Garis Penghubung Panjang buat kasih jarak foto kamera -->
+            <div class="connector-line reveal-line" style="--line-height: 180px;"></div>
 
             <!-- TRANSISI 1 -->
             <div class="timeline-point reveal-cinematic">
                 <span class="point-dot-story"></span>
-                <p class="point-text" style="max-width: 85%;">Siapa sangka ya? Candaan di lorong sekolah dulu malah bawa kita ke titik seserius ini...</p>
+                <p class="point-text" style="max-width: 85%;">Memori itu kemudian dicetak, dibiarkan mengering bersama waktu...</p>
             </div>
 
-            <div class="connector-line reveal-line"></div>
+            <div class="connector-line reveal-line" style="--line-height: 50px;"></div>
 
-            <!-- BAB 2: RUANG CUCI CETAK (CAMPURAN FOTO JEMURAN DIPERBANYAK) -->
+            <!-- BAB 2: RUANG CUCI CETAK -->
             <div class="timeline-content reveal-cinematic">
                 <div class="jemuran-wrapper" style="width: 100%; position: relative; z-index: 5;">
                     
@@ -272,15 +283,15 @@
                 </div>
             </div>
 
-            <div class="connector-line reveal-line"></div>
+            <div class="connector-line reveal-line" style="--line-height: 80px;"></div>
 
             <!-- TRANSISI AKHIR -->
             <div class="timeline-point reveal-cinematic">
                 <span class="point-dot-story"></span>
-                <p class="point-text" style="max-width: 85%;">Dan dari semua perjalanan seru itu, akhirnya kita mantap buat ngambil langkah besar ini...</p>
+                <p class="point-text" style="max-width: 85%;">Dan dari semua perjalanan seru itu, akhirnya kita mantap buat ngambil langkah besar ini, tentu dengan planning yang sudah kita susun dan usaha yang selalu kita jalankan...</p>
             </div>
 
-            <div class="connector-line reveal-line"></div>
+            <div class="connector-line reveal-line" style="--line-height: 60px;"></div>
 
             <!-- BAB 3: BINGKAI ABADI (JAS & GAUN) -->
             <div class="timeline-content reveal-cinematic" style="padding-bottom: 40px;">
@@ -292,7 +303,6 @@
                     </div>
 
                     <div class="frame-flip-inner">
-                        <!-- Sisi Depan: Bingkai Foto Jas & Gaun -->
                         <div class="frame-front">
                             <div class="wooden-frame">
                                 <div class="frame-matboard">
@@ -301,13 +311,11 @@
                             </div>
                         </div>
                         
-                        <!-- Sisi Belakang: Pesan -->
                         <div class="frame-back">
                             <div class="back-message-content">
                                 <span class="icon-ring">💍</span>
-                                <p class="sincere-text">"Dari yang cuma sekadar teman buat cerita, sampai akhirnya berani bangun cerita yang baru bareng-bareng.</p>
-                                <p class="sincere-text">Makasih ya udah mau nemenin awal perjalanan kita."</p>
-                                <!-- Presisi teks diperbaiki -->
+                                <p class="sincere-text">...Dan hari ini, semua rencana itu akhirnya terbingkai jadi nyata. Seneng banget rasanya bisa berbagi momen seberharga ini sama kalian.</p>
+                                <p class="sincere-text">Makasih ya udah hadir dan nyempurnain hari bahagia kita.</p>
                                 <div class="back-signature">Taufik & Rahma</div>
                             </div>
                         </div>
