@@ -29,7 +29,7 @@
 }
 
 /* ==========================================================================
-   2. RESET & GLOBAL STYLES
+   2. RESET & GLOBAL STYLES 
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100vw; font-family: var(--font-sans); background-color: var(--bg-main); color: var(--text-dark); line-height: 1.7; }
@@ -83,30 +83,14 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 .ayat { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; font-weight: 400; max-width: 550px; line-height: 1.8; color: #fff; text-shadow: 1px 1px 8px rgba(0,0,0,0.5); margin: 0 auto; }
 
 /* ==========================================================================
-   8. BRIDE & GROOM SECTION (FRAME PROFILE DIPERKECIL & ESTETIK)
+   8. BRIDE & GROOM SECTION
    ========================================================================== */
 .salam { font-size: 0.85rem; margin-bottom: 40px; line-height: 1.7; color: var(--accent-hover); }
 .couple-cards { display: flex; flex-direction: column; gap: 50px; width: 100%; align-items: center; }
 .person { display: flex; flex-direction: column; align-items: center; width: 100%; }
-
-/* Frame diubah ukurannya biar ngga raksasa dan lengkungannya lebih rapi */
-.aesthetic-frame { 
-    width: 170px; 
-    height: 240px; 
-    border-radius: 85px 85px 8px 8px; 
-    overflow: hidden; 
-    padding: 6px; 
-    background-color: #fff; 
-    margin-bottom: 15px; 
-    box-shadow: 0 10px 25px rgba(58, 71, 61, 0.15); 
-    position: relative; 
-    transition: var(--transition-smooth); 
-}
+.aesthetic-frame { width: 170px; height: 240px; border-radius: 85px 85px 8px 8px; overflow: hidden; padding: 6px; background-color: #fff; margin-bottom: 15px; box-shadow: 0 10px 25px rgba(58, 71, 61, 0.15); position: relative; transition: var(--transition-smooth); }
 .aesthetic-frame:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(58, 71, 61, 0.25); }
-.aesthetic-frame img { 
-    width: 100%; height: 100%; object-fit: cover; 
-    border-radius: 80px 80px 4px 4px; 
-}
+.aesthetic-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 80px 80px 4px 4px; }
 .name-script { font-size: 3.2rem; margin-bottom: -5px; line-height: 1; }
 .full-name { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; }
 .parents { font-size: 0.8rem; margin-bottom: 12px; color: var(--accent-hover); }
@@ -132,25 +116,64 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 .event-address { font-size: 0.8rem; margin-bottom: 25px; line-height: 1.5; color: var(--accent-hover); }
 
 /* ==========================================================================
-   10. SCROLLYTELLING MASTERPIECE 
+   10. SCROLLYTELLING MASTERPIECE (GARIS MENGALIR & ANIMASI HALUS)
    ========================================================================== */
 .scrollytelling-wrapper.visual-theme { position: relative; width: 100%; max-width: 900px; display: flex; flex-direction: column; align-items: center; margin: 0 auto; }
 
-/* Animasi Muncul/Hilang dua arah */
-.reveal-cinematic { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform; }
+/* Animasi Muncul Lembut untuk Elemen Pembuka */
+.reveal-cinematic { opacity: 0; transform: translateY(40px); transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); will-change: opacity, transform; }
 .reveal-cinematic.is-visible { opacity: 1; transform: translateY(0); }
 
-/* Garis Hubung Animasi (Tumbuh ke Bawah) */
-.connector-line { width: 2px; height: 0px; background: var(--accent-color); margin: 15px auto; opacity: 0.6; transition: height 1s cubic-bezier(0.25, 1, 0.5, 1); }
-.connector-line.is-visible { height: 70px; }
+/* ANIMASI GARIS TUMBUH MENGALIR */
+.connector-line { 
+    width: 2px; 
+    height: 0px; 
+    background: linear-gradient(to bottom, transparent, var(--accent-color) 15%, var(--accent-color) 85%, transparent); 
+    margin: 10px auto; 
+    opacity: 0; 
+    transition: height 1.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.5s ease;
+}
+.connector-line.is-visible { 
+    height: var(--line-height, 100px); 
+    opacity: 0.8; 
+}
 
+/* ANIMASI TITIK (DOTS) MENYALA & MENGAYUN */
 .timeline-point { position: relative; display: flex; flex-direction: column; align-items: center; z-index: 2; padding: 0; margin-bottom: 10px; }
-.point-dot-story { width: 12px; height: 12px; background: var(--accent-color); border-radius: 50%; box-shadow: 0 0 0 5px rgba(106, 123, 109, 0.15); }
-.point-text { font-family: var(--font-serif); font-size: 1.15rem; color: var(--bg-dark); font-style: italic; text-align: center; line-height: 1.6; margin-top: 15px; }
+
+.point-dot-story { 
+    width: 12px; height: 12px; 
+    background: var(--accent-color); 
+    border-radius: 50%; 
+    position: relative;
+    z-index: 3;
+    transform: scale(0);
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.timeline-point.is-visible .point-dot-story { 
+    transform: scale(1);
+    animation: pulseDot 2.5s infinite alternate ease-in-out 0.8s;
+}
+@keyframes pulseDot {
+    0% { box-shadow: 0 0 0 4px rgba(106, 123, 109, 0.1), 0 0 10px rgba(106, 123, 109, 0.3); }
+    100% { box-shadow: 0 0 0 8px rgba(106, 123, 109, 0.2), 0 0 20px rgba(106, 123, 109, 0.6); }
+}
+
+/* Teks Cerita Mengalun Munculnya Di-delay Biar Elegan */
+.point-text { 
+    font-family: var(--font-serif); font-size: 1.15rem; color: var(--bg-dark); 
+    font-style: italic; text-align: center; line-height: 1.6; margin-top: 15px;
+    opacity: 0; transform: translateY(15px);
+    transition: all 1s ease 0.4s; 
+}
+.timeline-point.is-visible .point-text {
+    opacity: 1; transform: translateY(0);
+}
+
 .timeline-content { position: relative; z-index: 2; width: 100%; display: flex; justify-content: center; padding: 0; }
 
 /* KAMERA */
-.magic-camera-container { position: relative; width: 200px; height: 160px; cursor: pointer; margin-top: 20px; background: var(--bg-main); padding: 10px; z-index: 2; }
+.magic-camera-container { position: relative; width: 200px; height: 160px; cursor: pointer; margin-top: 10px; background: var(--bg-main); padding: 10px; z-index: 2; }
 .camera-body { width: 100%; height: 100%; background: #2a312c; border-radius: 15px; position: absolute; top: 0; left: 0; z-index: 3; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-bottom: 10px solid #1c221e; display: flex; justify-content: center; align-items: center; }
 .camera-lens { width: 80px; height: 80px; background: #111; border-radius: 50%; border: 10px solid #d4c4a8; box-shadow: inset 0 0 15px #000; position: relative; }
 .lens-reflection { width: 20px; height: 20px; background: rgba(255,255,255,0.3); border-radius: 50%; position: absolute; top: 8px; left: 8px; }
@@ -203,12 +226,33 @@ h2, h3, .subtitle-cover, .event-heading { font-family: var(--font-serif); color:
 .frame-matboard { width: 100%; height: 100%; box-shadow: inset 0 0 10px rgba(0,0,0,0.2), 0 2px 5px rgba(0,0,0,0.1); background: #fff; padding: 3px; border: 1px solid #ddd; }
 .frame-matboard img { width: 100%; height: 100%; object-fit: cover; filter: sepia(10%); }
 
-/* Teks Bingkai 3D (Back) - Presisi dan Anti Numpuk */
-.frame-back { background-color: var(--bg-dark); color: #fff; transform: rotateY(180deg); border: 3px solid #d4c4a8; display: flex; justify-content: center; align-items: center; padding: 20px; }
-.back-message-content { display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(212, 196, 168, 0.3); padding: 20px 15px; height: 100%; width: 100%; justify-content: center; }
-.icon-ring { font-size: 2rem; margin-bottom: 10px; }
-.sincere-text { font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.6; color: rgba(255, 255, 255, 0.95); margin-bottom: 8px; text-align: center; font-style: italic; }
-.back-signature { font-family: var(--font-script); font-size: 2rem; color: #d4c4a8; margin-top: 15px; white-space: nowrap; line-height: 1; }
+/* Teks Bingkai 3D (Back) - Presisi, Teks Agak Mengecil Biar Pas */
+.frame-back { background-color: var(--bg-dark); color: #fff; transform: rotateY(180deg); border: 3px solid #d4c4a8; display: flex; justify-content: center; align-items: center; padding: 15px; }
+.back-message-content { display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(212, 196, 168, 0.3); padding: 20px 10px; height: 100%; width: 100%; justify-content: center; }
+.icon-ring { font-size: 1.8rem; margin-bottom: 10px; }
+.sincere-text { font-family: var(--font-serif); font-size: 0.9rem; line-height: 1.5; color: rgba(255, 255, 255, 0.95); margin-bottom: 8px; text-align: center; }
+
+/* Desain Nama Bersusun (Vertikal) Anti Nabrak di Dalam Bingkai */
+.back-signature-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+.sig-name {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: #d4c4a8;
+    line-height: 0.8;
+}
+.sig-amp {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: #d4c4a8;
+    opacity: 0.7;
+    margin: 5px 0;
+    line-height: 0.8;
+}
 
 /* ==========================================================================
    11. WEDDING GIFT (ACCORDION)
